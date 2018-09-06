@@ -19,7 +19,7 @@ class Encoder(nn.Module):
         idx = Variable(torch.LongTensor(idx))
 
         if USE_CUDA:
-            idx = idx.cuda(CUDA_DEVICE)
+            idx = idx.cuda()
 
         inverted_var = var.index_select(0, idx)
         return inverted_var
@@ -109,7 +109,7 @@ class UniSkip(nn.Module):
         
         mask = Variable(mask)
         if USE_CUDA:
-            mask = mask.cuda(var.get_device())
+            mask = mask.cuda()
             
         return mask
 

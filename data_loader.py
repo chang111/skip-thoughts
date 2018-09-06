@@ -51,7 +51,7 @@ class DataLoader:
         indices = np.array(indices)
         indices = Variable(torch.from_numpy(indices))
         if USE_CUDA:
-            indices = indices.cuda(CUDA_DEVICE)
+            indices = indices.cuda()
 
         return indices
 
